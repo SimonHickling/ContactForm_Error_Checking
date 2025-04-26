@@ -1,0 +1,289 @@
+:root {
+  /* ## Colors
+
+### Primary */
+
+  --Green200: hsl(148, 38%, 91%);
+  --Green600: hsl(169, 82%, 27%);
+  --Red: hsl(0, 66%, 54%);
+
+  /* ### Neutral */
+
+  --White: hsl(0, 0%, 100%);
+  --Grey500: hsl(186, 15%, 59%);
+  --Grey900: hsl(187, 24%, 22%);
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Karla;
+  color: var(--Grey900);
+  background-color: var(--Green200);
+  height: 100vh;
+  align-content: center;
+}
+
+i {
+  color: var(--Green600);
+}
+
+.form-container {
+  width: 650px;
+  height: 850px;
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  background-color: var(--White);
+  padding: 50px;
+  border-radius: 20px;
+}
+
+form {
+  width: 100%;
+}
+fieldset {
+  padding: 0;
+  border: none;
+}
+
+.name-set-grid {
+  display: grid;
+  grid-template-areas: "name1 name2" "input1 input2" "firstError lastError";
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.first-name-label {
+  grid-area: name1;
+  position: relative;
+  top: 25px;
+}
+
+.last-name-label {
+  grid-area: name2;
+  position: relative;
+  top: 25px;
+}
+
+.first-name-input {
+  grid-area: input1;
+}
+.last-name-input {
+  grid-area: input2;
+}
+
+#first-error {
+  grid-area: firstError;
+  position: relative;
+  bottom: 25px;
+}
+#last-error {
+  grid-area: lastError;
+  position: relative;
+  bottom: 25px;
+}
+
+input,
+textarea {
+  border-radius: 5px;
+  border: 1px solid var(--Grey500);
+  margin-top: 20px;
+  margin-bottom: 8px;
+  resize: none;
+}
+
+.first-name-input,
+.last-name-input {
+  width: 100%;
+  height: 40px;
+}
+
+.email-input {
+  width: 100%;
+  height: 40px;
+}
+
+.query-type-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.message-input {
+  width: 100%;
+  height: 150px;
+}
+
+.radio-container {
+  display: flex;
+  width: 48%;
+  border: 1px solid var(--Grey500);
+  border-radius: 5px;
+  align-items: center;
+  height: 40px;
+  margin: 20px 0 8px 0;
+}
+
+input:focus,
+textarea:focus {
+  outline: 2px solid var(--Green600);
+}
+
+.radio-btn {
+  margin: 0 20px 0 20px;
+}
+input[type="radio"] {
+  appearance: auto;
+  position: relative;
+  cursor: pointer;
+}
+input[type="radio"]:checked {
+  opacity: 0;
+  cursor: pointer;
+}
+.radio-icon {
+  display: none;
+  position: relative;
+  right: 37px;
+  bottom: 1px;
+}
+input[type="radio"]:checked + .radio-icon {
+  display: inline;
+}
+
+.checkbox-icon {
+  display: none;
+  position: relative;
+  right: 20px;
+  top: 5px;
+}
+input[type="checkbox"] {
+  position: relative;
+  top: 2px;
+}
+input[type="checkbox"]:checked {
+  opacity: 0;
+  cursor: pointer;
+}
+input[type="checkbox"]:checked + .checkbox-icon {
+  display: inline;
+}
+
+button {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 50px;
+  align-items: center;
+  font-size: 18px;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--Green600);
+  color: var(--White);
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: hsl(169, 83%, 21%);
+}
+
+span {
+  color: var(--Red);
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.success-container {
+  justify-self: center;
+  width: 550px;
+  height: 90px;
+  position: relative;
+  top: 35px;
+  background-color: var(--Grey900);
+  color: var(--White);
+  padding: 10px 30px 40px 30px;
+  border-radius: 20px;
+}
+.success-hide {
+  opacity: 0;
+}
+
+.success-message {
+  display: flex;
+}
+
+.success-message h2 {
+  padding-left: 20px;
+}
+
+p {
+  font-size: 20px;
+}
+
+.attribution {
+  margin-top: 20px;
+}
+
+@media (max-width: 800px) {
+  .form-container {
+    width: 350px;
+    height: 950px;
+    padding: 25px;
+  }
+  .name-set-grid {
+    display: grid;
+    grid-template-areas: "name1" "input1" "firstError" "name2" "input2" "lastError";
+    grid-template-columns: 1fr;
+    grid-template-rows: 40px 60px 10px 40px 60px 40px;
+    gap: 0;
+  }
+  .first-name-input {
+    width: 100%;
+  }
+
+  .first-name-label,
+  .last-name-label {
+    position: relative;
+    top: 20px;
+  }
+  #first-error,
+  #last-error {
+    position: relative;
+    bottom: 5px;
+  }
+  input,
+  textarea {
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+
+  .query-type-container {
+    flex-direction: column;
+  }
+  .radio-container {
+    width: 100%;
+    margin: 10px 0 0px 0;
+  }
+
+  button {
+    margin-top: 10px;
+  }
+
+  .success-container {
+    width: 350px;
+    height: 130px;
+  }
+}
+
+@media (max-width: 450px) {
+  .form-container {
+    width: 250px;
+  }
+  .success-container {
+    width: 210px;
+    height: 150px;
+  }
+}
